@@ -1,13 +1,13 @@
 (function(){
   
-const form = document.querySelector('#itemForm'); // select form
-const itemInput = document.querySelector('#itemInput'); // select input box from form
+const form = document.querySelector('#itemForm'); 
+const itemInput = document.querySelector('#itemInput'); 
 const itemList = document.querySelector('.item-list');
 const feedback = document.querySelector('.feedback');
 const clearButton = document.querySelector('#clear-list');
 let toDoList =[];
 
-//form타입 자바스크립트
+
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
    // let va = itemInput.value;
@@ -45,7 +45,7 @@ function getList(){
 }
 
 function modItem(list){
-    const items = itemList.querySelectorAll('.item');//배열로만들어
+    const items = itemList.querySelectorAll('.item');
 
     items.forEach( (item) =>{
         if(item.querySelector('.item-name').textContent == list){
@@ -74,12 +74,4 @@ function modItem(list){
         }
     });
 }
-    
-
-
-   
-    
-   
-    
-
 })();
