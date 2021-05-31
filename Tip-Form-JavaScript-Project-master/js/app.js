@@ -44,7 +44,7 @@
     let user = Number(users.value);
 
     if(bill <=0 || user <= 0 || vat == undefined){
-      //유효성검사
+     
       feedback.classList.add('showItem','alert-danger');
       feedback.textContent = 'check again';
 
