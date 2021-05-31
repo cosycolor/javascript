@@ -5,9 +5,6 @@
     cartInfo.addEventListener('click',()=>{
         cart.classList.toggle('show-cart');
     })
-})();
-
-(function(){
     const cartBtn = document.querySelectorAll('.store-item-icon');
 
     cartBtn.forEach((btn)=>{
@@ -46,7 +43,6 @@
             }
         });
     });
-
     function showTotals(){
         const total = [];
         let sum = 0;
