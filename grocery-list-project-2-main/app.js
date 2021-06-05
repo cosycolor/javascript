@@ -78,7 +78,7 @@
         }
     }
     function removeItem(event){
-        //a링크가 걸려있기때문에 이벤트 취소함
+        //a링크 취소
         event.preventDefault();
         let link_parent = event.target.parentElement;
         if(link_parent.classList.contains('grocery-item_link')){
