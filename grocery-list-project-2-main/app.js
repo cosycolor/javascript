@@ -1,13 +1,14 @@
 (function(){
     const addItemAction = document.querySelector('.addItems-action');
     const inputValue = document.querySelector('.addItems-input');
+    //form태그 전체를 잡아야 submit이벤트를 탈 수있다.
     const submit = document.querySelector('.addItems-submit');
     const groceryList = document.querySelector('.grocery-list');
     const clearAll = document.querySelector('.displayItems-clear');
 
    
     document.addEventListener('DOMContentLoaded',getList);
-    //submit으로 하면 왜 새로고침되고 click 으로 해야하는거지?
+    
     submit.addEventListener('click',addList);
     groceryList.addEventListener('click',removeItem);
     clearAll.addEventListener('click',clearAllItems);
