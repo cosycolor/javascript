@@ -13,6 +13,17 @@
     author.addEventListener('blur', check);
     subBtn.addEventListener('click',addList);
 
+    function getList(){
+        let local = localStorage.getItem('courseLists');
+
+        if(local){
+            let lists = JSON.parse(local);
+            lists.forEach((list) => {
+                createDiv(list.name,list.course,list.author,list.random);
+            });
+        }
+    }
+
     function check(event){
         if(event.target.value ==''){
             event.target.classList.remove('complete');
@@ -30,16 +41,6 @@
         }
     }
 
-    function getList(){
-        let local = localStorage.getItem('courseLists');
-
-        if(local){
-            let lists = JSON.parse(local);
-            lists.forEach((list) => {
-                createDiv(list.name,list.course,list.author,list.random);
-            });
-        }
-    }
     function addList(event){
         event.preventDefault();
         
@@ -67,11 +68,13 @@
             "author": author,
             "random": random
         }
+
         addStorage(value);
         document.querySelector('.name').value ='';
         document.querySelector('.course').value ='';
         document.querySelector('.author').value ='';
     }
+
     function createDiv(name, course, author, random){
 
         const div = document.createElement('div');
@@ -93,10 +96,11 @@
         customers.appendChild(div);
         
     }
+
     function addStorage(value){
 
         let locals = localStorage.getItem('courseLists');
-        //locals은 배열
+        
         if(locals){
             locals = JSON.parse(locals);
             locals.push(value);
@@ -106,7 +110,5 @@
             locals.push(value);
             localStorage.setItem('courseLists', JSON.stringify(locals));
         }
-        
     }
-    
 })();

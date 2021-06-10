@@ -67,7 +67,7 @@
         loading.classList.add('showItem');
 
         const self = this;
-        //여기선 this써도 되지 않나
+        
         this.hideSubmit();
 
         setTimeout(()=>{
